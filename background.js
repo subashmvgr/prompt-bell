@@ -10,8 +10,8 @@ chrome.alarms.onAlarm.addListener((alarm) => {
       priority: 2
     });
     // Play notification sound
-    const audio = new Audio(chrome.runtime.getURL("ding.mp3"));
-    audio.play();
+    // const audio = new Audio(chrome.runtime.getURL("ding.mp3"));
+    // audio.play();
     chrome.storage.local.remove(id); // Clean up
   });
 });
