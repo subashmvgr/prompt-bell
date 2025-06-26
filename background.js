@@ -39,6 +39,39 @@ const breakMessages = [
   "Wave at your reflection – why not? 😄"
 ];
 
+const welcomeMessages = [
+  "PromptBell is active – and so are your dreams. Let’s make today productive and kind to yourself.",
+  "Welcome back! You’ve got this — one mindful break at a time.",
+  "Just a reminder: You’re doing better than you think. Keep going.",
+  "PromptBell is here to support your focus and your well-being.",
+  "A quick pause can lead to powerful clarity. PromptBell’s got you.",
+  "Be kind to your mind. PromptBell will help you remember to rest.",
+  "You’re capable, strong, and deserving of balance. Let’s start the day right.",
+  "PromptBell is on – your little helper for a calmer, more focused you.",
+  "Every break is a step toward better energy. Let’s take it together.",
+  "You’re not just working hard — you’re growing. Take care of yourself.",
+  "Let’s get things done — and not forget to breathe. PromptBell is with you.",
+  "You’re important. So is your peace. PromptBell will remind you both matter.",
+  "Today’s a fresh start. Stay focused, stay kind to yourself.",
+  "PromptBell is active — because balance is productive.",
+  "Your mind deserves rest, not just results. Let PromptBell guide you gently.",
+  "A break now is fuel for later. You’re doing great.",
+  "Welcome! Here’s to small wins and deep breaths.",
+  "PromptBell is your friendly nudge toward self-care and clarity.",
+  "You’re showing up — that’s enough. Let’s add mindful pauses too.",
+  "Progress isn’t just tasks done. It’s taking care of you too.",
+  "PromptBell is live! Let’s aim for progress with peace of mind.",
+  "Remember, rest is productive. PromptBell is your permission slip.",
+  "You’re more than your to-do list. PromptBell will help you breathe.",
+  "Ready to focus? PromptBell will help you pause, too.",
+  "Celebrate the small wins — including your next well-earned break.",
+  "PromptBell is your positivity partner. Let’s make today brighter.",
+  "Here’s to good work, good breaks, and a good mood.",
+  "You’re allowed to rest. You’re allowed to thrive.",
+  "PromptBell is active — your wellness is just as important as your workflow.",
+  "Let’s take on the day with focus, grace, and just enough pause to stay balanced."
+];
+
 // === Function to show a random break notification ===
 function showBreakNotification() {
   const message = breakMessages[Math.floor(Math.random() * breakMessages.length)];
@@ -59,22 +92,24 @@ function setupBreakInterval() {
 
 // === Welcome message and setup ===
 chrome.runtime.onStartup.addListener(() => {
+  const message = welcomeMessages[Math.floor(Math.random() * welcomeMessages.length)];
   chrome.notifications.create({
     type: "basic",
     iconUrl: "icon.png",
     title: "Welcome!",
-    message: "PromptBell is active. Add your own reminders anytime!",
+    message: message,
     priority: 2
   });
   setupBreakInterval();
 });
 
 chrome.runtime.onInstalled.addListener(() => {
+  const message = welcomeMessages[Math.floor(Math.random() * welcomeMessages.length)];
   chrome.notifications.create({
     type: "basic",
     iconUrl: "icon.png",
     title: "PromptBell Installed 🎉",
-    message: "We'll remind you to take breaks. You can also add custom alerts.",
+    message: message,
     priority: 2
   });
   setupBreakInterval();
