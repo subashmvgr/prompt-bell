@@ -1,17 +1,31 @@
 {
   "manifest_version": 3,
   "name": "PromptBell",
-  "version": "2.0",
-  "description": "Wellness breaks and custom reminders to help you no longer burnt out at Tech",
-  "permissions": ["alarms", "notifications", "storage"],
+  "version": "2.1",
+  "description": "Stay focused and avoid burnout with smart wellness breaks and customizable reminders tailored for modern tech workflows.",
+  "permissions": [
+    "alarms",
+    "notifications",
+    "storage"
+  ],
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "icon.png"
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
   },
   "background": {
     "service_worker": "background.js"
   },
   "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
     "128": "icon.png"
-  }
+  },
+  "options_page": "options.html",
+  "author": "PromptBell Team",
+  "homepage_url": "https://yourprojecthomepage.com",
+  "short_name": "PromptBell"
 }
