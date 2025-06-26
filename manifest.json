@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "PromptBell",
-  "version": "1.0",
-  "description": "Set simple reminders from your Chrome browser.",
+  "version": "2.0",
+  "description": "Wellness breaks and custom reminders to help you no longer burnt out at Tech",
   "permissions": ["alarms", "notifications", "storage"],
   "action": {
     "default_popup": "popup.html",
